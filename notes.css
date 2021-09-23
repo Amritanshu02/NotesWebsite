@@ -1,0 +1,9 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#content{
+    display: flex;
+    flex-wrap: wrap;
+}
