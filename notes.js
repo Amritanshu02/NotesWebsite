@@ -27,7 +27,7 @@ function showNotes() {
         notesObj = JSON.parse(notes);
     let html = "";
     notesObj.forEach(function (element, index) {
-        if ((element.Title.length > 0 && element.Content.length > 0)) {
+    if ((element.Title.length > 0 && element.Content.length > 0)) {
             html += `
             <div class="card my-2 mx-2" style="width: 18rem; background-color: darkgray;">
                 <div class="card-body">
@@ -37,7 +37,7 @@ function showNotes() {
                 </div>
                 </div>`;
         }
-        else {
+    else {
             let alert = document.getElementById("alerting");
             alert.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <strong>Error!</strong> Note heading and content cannot be empty.
@@ -80,3 +80,20 @@ search.addEventListener("input", function () {
         }
     });
 });
+
+const options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
