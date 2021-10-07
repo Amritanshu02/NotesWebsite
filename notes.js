@@ -29,10 +29,10 @@ function showNotes() {
     notesObj.forEach(function (element, index) {
     if ((element.Title.length > 0 && element.Content.length > 0)) {
             html += `
-            <div class="card my-2 mx-2" style="width: 18rem; background-color: darkgray;">
+            <div class="card special-card  my-2 mx-2" style="width: 18rem; background-color: white; ">
                 <div class="card-body">
-                    <h5 class="card-title" style="text-decoration:underline;">${element.Title}</h5>
-                    <p class="card-text">${element.Content}</p>
+                    <h5 class="card-title  text-light" style="text-decoration:underline;" >${element.Title}</h5>
+                    <p class="card-text text-white-50" >${element.Content}</p>
                     <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-primary">Delete</button>
                 </div>
                 </div>`;
@@ -54,6 +54,37 @@ function showNotes() {
     else
         notesElm.innerHTML = `Nothing to show. Use "Add Note" to add a note.`;
 }
+
+
+var darktheme=false
+function switchtheme()
+{
+    
+    document.querySelector("body").classList.toggle("bg-dark")
+    document.querySelectorAll("h2").forEach(element=>{
+        element.classList.toggle("text-white")
+    })
+    document.querySelectorAll("textarea").forEach(element=>{
+        element.classList.toggle("bg-light")
+    })
+    document.querySelectorAll(".card").forEach(element=>{
+        element.classList.toggle("bg-light")
+    })
+    document.querySelectorAll(".card-title").forEach(element=>{
+        element.classList.toggle("text-light")
+    })
+    document.querySelectorAll(".card-text").forEach(element=>{
+        element.classList.toggle("text-white-50")
+    })
+    document.querySelector(".toggle-theme").classList.toggle("btn-dark")
+    document.querySelector(".darky").classList.toggle("visually-hidden") 
+    document.querySelector(".lighty").classList.toggle("visually-hidden") 
+    
+    
+}
+
+
+
 
 function deleteNote(index) {
     let notes = localStorage.getItem("notes");
