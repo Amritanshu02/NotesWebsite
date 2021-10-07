@@ -1,9 +1,30 @@
 *{
     margin: 0px;
     padding: 0px;
+    
+}
+.card *{
+    
+    color: black;
 }
 
 #content{
     display: flex;
     flex-wrap: wrap;
 }
+.special-card {
+    /* create a custom class so you 
+       do not run into specificity issues 
+       against bootstraps styles
+       which tends to work better than using !important 
+       (future you will thank you later)*/
+     border-color: rgb(24, 24, 24) !important;
+      
+      background-color: #2f363d !important;
+      opacity: .8;
+      color: rgb(255, 255, 255) !important;
+    }
+    .darky{
+        color: rgb(255, 255, 255) !important;
+
+    }
