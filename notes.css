@@ -7,3 +7,358 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+/* pre loader start */
+.loader-container{
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 10000;
+  background: #e6eff1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.loader-container.fade-out{
+  top: -120%;
+}
+/* pre loader end */
+
+@media only screen and (max-width: 1100px) {
+    .login-box {
+  
+      width: 700px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .login-box {
+      top: 60%;
+      width: 80%;
+    }
+  }
+  
+  input[type=checkbox],
+  input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .contact {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: rgb(153, 150, 150);
+    width: 100%;
+  }
+  
+  .contact ul {
+    margin: 25px;
+  }
+  #subcribe{
+    border: 2px solid rgb(153, 150, 150);
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 3%;
+    height: 5vh;
+    width: 12vw;
+    position: relative;
+    outline: none;
+    
+  }
+  .label{
+    position: absolute;
+    font-size: 0.85rem !important;
+    height: 5vh;
+    padding-left: 0.3%;
+    padding-top: 0.3%;
+    border-radius: 0px 10px 10px 0px;
+    background: #5282d4;
+    background-image: linear-gradient(to bottom, #5282d4, #28667d);
+    cursor: pointer;
+  }
+  
+  .contact ul li,
+  a {
+    color: black;
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: large;
+    margin: 5px;
+  }
+  .heading {
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bolder;
+    padding-bottom: 2%;
+  }
+  
+  .footer {
+    background-color: rgb(56, 55, 55);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8cm;
+    font-weight: bolder;
+    color: white;
+  }
+  
+  .header {
+  /*   height: 60px; */
+     min-height: 60px;
+    color: white;
+    background-color: rgb(48, 46, 46);
+    width: 100%;
+  }
+  
+  .header ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+    height: 55px;
+  }
+  
+  .header ul li {
+    margin-right: 20px;
+  }
+  
+  .new-nav {
+  /*   height: 50px; */
+    min-height: 50px;
+    background-color: #f3d094;
+    align-items: center;
+  }
+  
+  .fas{
+    margin-right: 6px;
+  }
+  
+  .new-nav ul {
+    margin-left: 40px;
+    margin-right: 40px;
+    /* margin-top: 17px; */
+    display: flex;
+  /*   flex-direction: row; */
+     flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icons_{
+    padding: 0 12px;
+  }
+  
+  
+  .new-nav li {
+    font-family: sans-serif;
+    margin: 10px 25px;
+    list-style-type: none;
+  }
+  
+  .new-nav li a {
+    font-weight: 300;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #000;
+  }
+  
+  .new-nav li a:hover {
+    color: rgb(94, 80, 80);
+  }
+  
+  .contain {
+    height: 300px;
+    width: 690px;
+    color: black;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contain div {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 30px;
+    text-align: center;
+  }
+  
+  .line {
+    font-size: 0.6cm;
+  }
+  
+  #bold {
+    font-size: 1cm;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bolder;
+  }
+  
+  #search {
+    align-items: center;
+  }
+  
+  
+  
+  #searchTxt,
+  #searchsymbol {
+    margin: 0;
+  }
+  
+  #searchForm {
+    display: inline-block;
+    border: 1px solid grey;
+    border-radius: 12px;
+    align-items: center;
+  }
+  
+  .nav-link {
+    font-family: sans-serif;
+    font-size: 0.5cm;
+  }
+  
+  .login a:hover {
+    color: grey;
+  }
+  
+  .container div {
+    /* border: 2px solid white; */
+    /* width: 50%; */
+    margin-left: 0;
+  }
+  
+  .container {
+    display: flex;
+    margin-left: 20px;
+    width: 100%;
+    margin-right: 0;
+    padding-left: 30px;
+  }
+  
+  .col-sm-10 input,
+  .form-check-input1,
+  .form-check-input{
+    width: 100%;
+    padding: 3%;
+    border-radius: 5px;
+    outline: none;
+  }
+  #issueDate{
+     border-radius: 5px;
+     padding-left: 3%;
+     padding: 3%;
+     outline: none;
+     height: 5vh;
+  }
+  
+  .col-sm-10 {
+    width: 300px;
+  }
+  
+  .form-group {
+    width: 350px;
+  }
+  
+  .issue {
+    height: 40px;
+    font-size: 25px;
+    padding-left: 5px;
+  }
+  
+  #libraryForm {
+    width: 360px;
+  }
+  
+  .right {
+    width: 790px;
+    padding-left: 55px;
+    padding-right: 0px;
+    justify-items: right;
+  
+  }
+  
+  #table {
+    width: 92%;
+    /* padding: 0; */
+  }
+  
+  /*scrolling effect starts from here*/
+  
+  #scrollpath {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  #progressbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: animate 5s linear infinite;
+  }
+  
+  #progressbar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+  }
+  
+  #progressbar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+  }
+  
+  @keyframes animate {
+  
+    0%,
+    100% {
+      filter: hue-rotate(0deg);
+    }
+  
+    50% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  
+  .nav-item a{
+    padding: 10px 10px 15px;
+  }
+  
+  .nav-item :hover {
+  
+    background-color: rgb(247, 191, 9);
+    opacity: 1;
+  }
+  
+  .nav-item a{
+  text-decoration: none;
+  }
+  
+  .book-img ul {
+    list-style: none;
+  }
+  
+  
+ 
