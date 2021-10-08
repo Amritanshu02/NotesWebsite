@@ -1,12 +1,21 @@
+# OpenSource-NotesWebsite
 This is a notes website created with the help of HTML, CSS, Bootstrap and Javascript.
 
-# NotesWebsite
-# Visit Website
+
+# Visit Here:
+<a href="https://amritanshu02.github.io/NotesWebsite/" target="_blank">Visit our website 🚀</a>
+
 
 # How to contribute:
 1. Fork the repo
 2. Create a new issue or work upon an existing one.
 3. Make the PR and thats it.
+
+## 📌 Tech Stack
+
+![HTML](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
+![JS](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 # Basics of Git and GitHub
 # Git & GitHub
