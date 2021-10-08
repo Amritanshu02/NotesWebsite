@@ -8,6 +8,23 @@
     flex-wrap: wrap;
 }
 
+/* pre loader start */
+.loader-container{
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 10000;
+  background: #e6eff1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.loader-container.fade-out{
+  top: -120%;
+}
+/* pre loader end */
+
 @media only screen and (max-width: 1100px) {
     .login-box {
   
