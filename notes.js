@@ -12,8 +12,12 @@ addBtn.addEventListener("click", function (e) {
         Content: addText.value,
         Title: addTitle.value
     };
-    notesObj.push(myObj);
-    localStorage.setItem("notes", JSON.stringify(notesObj));
+	if(myObj.Title.length > 0 && myObj.Content.length > 0) {
+		notesObj.push(myObj);
+		localStorage.setItem("notes", JSON.stringify(notesObj));
+	}
+	else
+		showAlert();
     addText.value = "";
     addTitle.value = "";
     showNotes();
@@ -27,7 +31,6 @@ function showNotes() {
         notesObj = JSON.parse(notes);
     let html = "";
     notesObj.forEach(function (element, index) {
-    if ((element.Title.length > 0 && element.Content.length > 0)) {
             html += `
             <div class="card my-2 mx-2" style="width: 18rem; background-color: darkgray;">
                 <div class="card-body">
@@ -36,23 +39,23 @@ function showNotes() {
                     <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-primary">Delete</button>
                 </div>
                 </div>`;
-        }
-    else {
-            let alert = document.getElementById("alerting");
-            alert.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <strong>Error!</strong> Note heading and content cannot be empty.
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>`;
-            setTimeout(function () {
-                alert.innerHTML = '';
-            }, 3000);
-        }
     });
     let notesElm = document.getElementById("content");
     if (notesObj.length != 0)
         notesElm.innerHTML = html;
     else
         notesElm.innerHTML = `Nothing to show. Use "Add Note" to add a note.`;
+}
+
+function showAlert() {
+    let alert = document.getElementById("alerting");
+        alert.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Error!</strong> Note heading and content cannot be empty.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>`;
+        setTimeout(function () {
+            alert.innerHTML = '';
+        }, 3000);	
 }
 
 function deleteNote(index) {
