@@ -72,10 +72,13 @@ function deleteNote(index) {
 let search = document.getElementById('searchText');
 search.addEventListener("input", function () {
     let inputVal = search.value.toLowerCase();
+   
     let noteCards = document.getElementsByClassName("card");
     Array.from(noteCards).forEach(function (element) {
         let cardText = element.getElementsByTagName("p")[0].innerText;
-        if (cardText.includes(inputVal)) {
+        let cardTextheading = element.getElementsByTagName("h5")[0].innerText; //heading text inclusion
+     
+        if (cardText.includes(inputVal) || cardTextheading.includes(inputVal)) { //OR statement for heading as well
             element.style.display = "block";
         }
         else {
