@@ -36,9 +36,9 @@ function showNotes() {
                 <div class="card-body">
                     <h5 class="card-title" style="text-decoration:underline;">${element.Title}</h5>
                     <p class="card-text">${element.Content}</p>
-                    <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-primary">Delete</button>
+                    <button id="${index}" onclick="confirmDelete(this.id)" class="btn btn-primary">delete</button>
                 </div>
-                </div>`;
+            </div>`;
     });
     let notesElm = document.getElementById("content");
     if (notesObj.length != 0)
@@ -56,6 +56,45 @@ function showAlert() {
         setTimeout(function () {
             alert.innerHTML = '';
         }, 3000);	
+}
+
+function confirmDelete(index) {    
+    deleteButton = document.getElementById(index);
+    deleteButton.setAttribute("onclick", `deleteNote(${index})`)    
+    deleteButton.style.marginLeft = "10px";
+    
+    cancelButton = document.createElement('button');
+    cancelButton.innerText = "Cancel";
+    cancelButton.classList.add("btn");
+    cancelButton.classList.add("btn-primary");
+    cancelButton.classList.add("cancel-delete");
+    cancelButton.setAttribute("onclick", `cancelDelete(${index})`);    
+
+    msg = document.createElement('p');
+    msg.classList.add("msg");
+    msg.innerHTML = "Are you sure you want to delete this node?";    
+
+    card = deleteButton.parentNode;
+    deleteButton.remove();
+
+    card.append(msg);
+    card.append(cancelButton);
+    card.append(deleteButton);
+}
+
+function cancelDelete(index) {    
+    deleteButton = document.getElementById(index);    
+    card = deleteButton.parentNode;    
+
+    childnodes = card.childNodes;
+    let len = childnodes.length;
+    for (let i = len-1; i >= len-3; i--) {        
+        childnodes[i].remove();
+    }
+    
+    card.append(deleteButton);
+    deleteButton.setAttribute("onclick", `confirmDelete(${index})`);
+    deleteButton.style.marginLeft = "0px";
 }
 
 function deleteNote(index) {
