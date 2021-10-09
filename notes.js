@@ -1,25 +1,50 @@
+window.onload = function () {
+    document.getElementById('loading').style.display = "none";
+    document.getElementById('container').style.display = "block";
+  }
+  particlesJS.load("particles-js", "../config.json", function () {
+    console.log("callback - particles.js config loaded");
+  });
+
 showNotes();
+let successAlert = document.getElementById("successAlert");
+let deleteAlert = document.getElementById("deleteAlert");
+successAlert.style.display = "none";
+deleteAlert.style.display = "none";
 let addBtn = document.getElementById("addBtn");
-addBtn.addEventListener("click", function (e) {
-    let addText = document.getElementById("addText");
+addBtn.addEventListener("click", function(e) {
+    let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
     let notes = localStorage.getItem("notes");
-    if (notes == null)
+    if (notes == null) {
         notesObj = [];
-    else
+    } else {
         notesObj = JSON.parse(notes);
+    }
     let myObj = {
-        Content: addText.value,
-        Title: addTitle.value
+        title: addTitle.value,
+        text: addTxt.value,
     };
-	if(myObj.Title.length > 0 && myObj.Content.length > 0) {
-		notesObj.push(myObj);
-		localStorage.setItem("notes", JSON.stringify(notesObj));
-	}
-	else
-		showAlert();
-    addText.value = "";
+    let titleTxt = document.getElementById("addTitle");
+    let textTxt = document.getElementById("addTxt");
+    if (myObj.title != "" && myObj.text != "") {
+        notesObj.push(myObj);
+        successAlert.style.display = "block";
+        setInterval(() => {
+            successAlert.style.display = "none";
+        }, 3000);
+    } else if (myObj.title == "" || myObj.text == "") {
+        titleTxt.placeholder = `Can't be empty :/`;
+        textTxt.placeholder = `Can't be empty :/`;
+        setInterval(() => {
+            titleTxt.placeholder = `Title goes here...`;
+            textTxt.placeholder = `Share ideas, to-do's, tasks...`;
+        }, 3000);
+    }
+
+    localStorage.setItem("notes", JSON.stringify(notesObj));
     addTitle.value = "";
+    addTxt.value = "";
     showNotes();
 });
 
@@ -32,11 +57,11 @@ function showNotes() {
     let html = "";
     notesObj.forEach(function (element, index) {
             html += `
-            <div class="card my-2 mx-2" style="width: 18rem; background-color: darkgray;">
-                <div class="card-body">
-                    <h5 class="card-title" style="text-decoration:underline;">${element.Title}</h5>
-                    <p class="card-text">${element.Content}</p>
-                    <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-primary">Delete</button>
+            <div class="card my-2 mx-2" style="width: 18rem">
+                <div class="card-body>
+                    <h5 class="card-title">${element.title}</h5>
+                    <p class="card-text">${element.text}</p>
+                    <button id="${index}" onclick="deleteNote(this.id)" class="delBtn btn btn-danger">Delete</button>
                 </div>
                 </div>`;
     });
@@ -44,18 +69,14 @@ function showNotes() {
     if (notesObj.length != 0)
         notesElm.innerHTML = html;
     else
-        notesElm.innerHTML = `Nothing to show. Use "Add Note" to add a note.`;
-}
-
-function showAlert() {
-    let alert = document.getElementById("alerting");
-        alert.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Error!</strong> Note heading and content cannot be empty.
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>`;
-        setTimeout(function () {
-            alert.innerHTML = '';
-        }, 3000);	
+        notesElm.innerHTML = `
+        <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Lets Note Together</h5>
+                    <p class="card-text">Enter your customized notes</p>
+                    <button href="#" class="delBtn btn btn-danger">Delete Note</button>
+                </div>
+            </div>`;
 }
 
 function deleteNote(index) {
@@ -63,8 +84,12 @@ function deleteNote(index) {
     if (notes == null)
         notesObj = [];
     else
-        notesObj = JSON.parse(notes);
+    notesObj = JSON.parse(notes);
     notesObj.splice(index, 1);
+    deleteAlert.style.display = "block";
+    setInterval(() => {
+        deleteAlert.style.display = "none";
+    }, 3000);
     localStorage.setItem("notes", JSON.stringify(notesObj));
     showNotes();
 }
@@ -83,6 +108,8 @@ search.addEventListener("input", function () {
         }
     });
 });
+
+
 
 const options = {
   bottom: '64px', // default: '32px'
