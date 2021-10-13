@@ -62,6 +62,7 @@ function confirmDelete(index) {
     deleteButton = document.getElementById(index);
     deleteButton.setAttribute("onclick", `deleteNote(${index})`)    
     deleteButton.style.marginLeft = "10px";
+    deleteButton.innerText = 'Confirm?'
     
     cancelButton = document.createElement('button');
     cancelButton.innerText = "Cancel";
@@ -72,7 +73,7 @@ function confirmDelete(index) {
 
     msg = document.createElement('p');
     msg.classList.add("msg");
-    msg.innerHTML = "Are you sure you want to delete this node?";    
+    // msg.innerHTML = "Are you sure you want to delete this node?";    
 
     card = deleteButton.parentNode;
     deleteButton.remove();
@@ -95,6 +96,7 @@ function cancelDelete(index) {
     card.append(deleteButton);
     deleteButton.setAttribute("onclick", `confirmDelete(${index})`);
     deleteButton.style.marginLeft = "0px";
+    deleteButton.innerText = 'delete'
 }
 
 function deleteNote(index) {
