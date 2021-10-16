@@ -45,7 +45,16 @@
     padding: 0;
     margin-top: 1rem;
   }
+  /* Changing the search button colors to match the shade of yellow on the website */
+  .btn-outline-success {
+	  color: #ffc107 !important;
+	  border-color: #ffc107 !important;
+  }
   
+  /* Removed the gray background from the hover drop-down menu to make it easier to read the links */
+  .dropdown-menu li a:hover {
+	background-color: transparent !important;
+  }
   .contact {
     display: flex;
     flex-flow: row wrap;
@@ -82,11 +91,16 @@
   .contact ul li,
   a {
     color: black;
-    list-style: none;
+    list-style-type: none;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: large;
     margin: 5px;
   }
+   /* Increasing the contrast for the footer links. The yellow color made the links a little difficult to discern on the gray background. */
+   .contact ul li a {
+	   text-shadow: 0.5px 0.5px rgb(255,255,255);
+   }
+   
   .heading {
     list-style: none;
     font-family: 'Source Sans Pro', sans-serif;
@@ -264,6 +278,7 @@
     font-size: 25px;
     padding-left: 5px;
   }
+ 
   
   #libraryForm {
     width: 360px;
