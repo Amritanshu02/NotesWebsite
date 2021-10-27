@@ -59,7 +59,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    background-color: rgb(153, 150, 150);
+    background-color: rgb(68, 68, 68);
     width: 100%;
   }
   
@@ -374,6 +374,4 @@
   .book-img ul {
     list-style: none;
   }
-  
-  
  

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Document</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="notes.css">
@@ -16,9 +16,25 @@
         #info {
             padding: 80px 50px 0px 50px;
         }
+
         #alerting {
             position: fixed;
             width: 100%;
+        }
+
+        #particles-js {
+            width: 100%;
+            height: 45vh;
+            /* color: #000000; */
+            margin-top: -270px;
+            z-index: 10;
+        }
+
+        @media (max-width:682px) {
+            #particles-js {
+                height: 100vh;
+                margin-top: -100vh;
+            }
         }
     </style>
 </head>
@@ -26,14 +42,15 @@
 <body>
 
     <!-- pre loader -->
-<div class="loader-container">
-    <img draggable="false" src="./Assets/preloader.gif" alt="">
-  </div>
+    <div class="loader-container">
+        <img draggable="false" src="./Assets/preloader.gif" alt="">
+    </div>
 
     <header class="head">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#" style="text-shadow: 2px 2px 10px white;"><i class="fas fa-book"></i>RemNote</a>
+                <a class="navbar-brand" href="#" style="text-shadow: 2px 2px 10px white;"><i
+                        class="fas fa-book"></i>RemNote</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +67,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-external-link-alt">
-                                Features</i>
+                                    Features</i>
                             </a>
                             <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" style="color: white;" href="#">Action</a></li>
@@ -77,6 +94,7 @@
 
     <section id="alerting"></section>
 
+
     <section id="info">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">
@@ -95,7 +113,8 @@
         <hr>
     </section>
 
-    <section id="content" style="padding: 20px 50px 20px 50px;"> <!-- Added some padding at the bottom to even up the appearance. -->
+    <section id="content" style="padding: 20px 50px 20px 50px;">
+        <!-- Added some padding at the bottom to even up the appearance. -->
         <!-- <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
          <div class="card-body">
@@ -108,6 +127,51 @@
             </div>
         </div> -->
     </section>
+
+    <div class="contact">
+        <ul>
+            <li class="heading">Contact:</li>
+            <li>Ph:95768xyza</li>
+            <li>@2021 Copyright RemNote</li>
+            <li>
+                <ul id="logos social-link">
+                    <li>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/" target="github"> <i class="fab fa-github icon"></i> </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li class="heading">Community</li>
+            <li>Our Story</li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Terms Of use</a> </li>
+            <li>Accessibility</li>
+            <li><a href="#">Publishing process</a> </li>
+        </ul>
+        <ul>
+            <li class="heading">Company</li>
+            <li><a href="#">Contact us</a> </li>
+            <li><a href="./public/terms&conditions.html">Terms and conditions</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Careers</a></li>
+        </ul>
+        <ul>
+            <li><a href="#" class="heading">Subscribe to our newsletter</a> </li>
+            <li><input type="email" id="subcribe" placeholder="Email"><label for="subcribe" class="label">Sign
+                    up</label></li>
+        </ul>
+    </div>
+    <div id="particles-js">
+    </div>
+
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
 </body>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
@@ -117,45 +181,3 @@
 <script src="notes.js"></script>
 
 </html>
-
-<div class="contact">
-    <ul>
-      <li class="heading">Contact:</li>
-      <li>Ph:95768xyza</li>
-      <li>@2021 Copyright RemNote</li>
-      <li>
-        <ul id="logos social-link">
-          <li>
-            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/" target="github"> <i class="fab fa-github icon"></i> </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul>
-      <li class="heading">Community</li>
-      <li>Our Story</li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Refund Policy</a></li>
-      <li><a href="#">Terms Of use</a> </li>
-      <li>Accessibility</li>
-      <li><a href="#">Publishing process</a> </li>
-    </ul>
-    <ul>
-      <li class="heading">Company</li>
-      <li><a href="#">Contact us</a> </li>
-      <li><a href="./public/terms&conditions.html">Terms and conditions</a></li>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">Careers</a></li>
-    </ul>
-    <ul>
-      <li><a href="#" class="heading">Subscribe to our newsletter</a> </li>
-      <li><input type="email" id="subcribe" placeholder="Email"><label for="subcribe" class="label">Sign up</label></li>
-    </ul>
-  </div>
-  <div>
-    
-  
